@@ -1,17 +1,17 @@
-import time
 def bubble_sort(arr):
     n = len(arr)
-    for i in range(n):
-        swapped = False  # กำหนดค่าเริ่มต้นว่ายังไม่มีการสลับ
-        for j in range(0, n - i - 1):
+    for i in range(n - 1):
+        swapped = False  # เพิ่มตัวแปรเพื่อตรวจสอบการสลับ
+        for j in range(n - 1 - i):
             if arr[j] > arr[j + 1]:
-                arr[j], arr[j + 1] = arr[j + 1], arr[j]  # สลับค่าถ้าลำดับผิด
+                arr[j], arr[j + 1] = arr[j + 1], arr[j]
                 swapped = True  # มีการสลับเกิดขึ้น
         
+        # ถ้าไม่มีการสลับเลย ให้หยุดการทำงาน
         if not swapped:
-            break  # ถ้าไม่มีการสลับในรอบนี้ ให้หยุดการทำงานทันที
+            break
 
-# ตัวอย่างการใช้งาน
-arr = [64, 34, 25, 12, 22, 11, 90]
-bubble_sort(arr)
-print("Sorted array:", arr)
+# ทดสอบการทำงาน
+arr_test = [1, 2, 3, 4, 5,6,7,8,9,10]
+bubble_sort(arr_test)
+print("Sorted array:", arr_test)
